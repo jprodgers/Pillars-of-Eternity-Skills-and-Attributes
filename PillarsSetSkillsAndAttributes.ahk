@@ -1,6 +1,7 @@
 ﻿/*
 Written by Jimmie Rodgers
 Released under public domain. Do what you will with this script!
+It's shown as MIT License on GitHub, as that was the closest I coudld get to public domain, which this is.
 
 This is a script written for Pillars of Eternity to set Skills and Attributes for your whole party.
 Unfortunately PoE resets your characters anytime you re-load a save, or going back and forth between
@@ -21,23 +22,12 @@ character is always 0. So for example Aloth is "Companion_Aloth(Clone)_1" when y
 If you move him to the last position in the part and then reload the game he will now be know as
 "Companion_Aloth(Clone)_5". If you don't reload, then he will keep #1.
 
-If you ever need to know a name, you can open up the console and type "FindCharacter [NAME of character]"
-Simply make sure the companions below have the right names, you are in a small area, and then the script should run.
-*/
+If you ever need to know a name, you can open up the console and type "FindCharacter [NAME of character]".
+Change the names in the "CHANGE CHARACTER NAMES HERE!" section. Simply make sure the companions below have
+the right names, you are in a small area, and then the script should run fine.
 
-; Don't mess with this stuff
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-#SingleInstance force
-consoleKey:= "``" ; The console is brought up with `, but you have to put `` for autohotkey.
 
-/*
 Companions I have encountered, copy/paste from here.
-To find a character's name, type "FindCharacter Name" into the console.
-It will come back with something like below. The number at the end
-is the companion's position in your party the last time the game was loaded.
 Sometimes you'll have to FindCharacter names if you've made changes to the party.
 
 Companion_Aloth(Clone)_
@@ -52,6 +42,7 @@ Companion_Hiravias(Clone)_
 Companion_Pallegina(Clone)_
 */
 
+; CHANGE CHARACTER NAMES HERE!
 ; Make sure the names here match the CURRENT names of your party memebers or this will not work.
 MainChar := "Player_New_Game(Clone)_0"
 Companion1 := "Companion_Aloth(Clone)_1"
@@ -65,6 +56,15 @@ Companion5 := "Companion_Hiravias(Clone)_5"
 ; Change these to change all stats and attributes to that level.
 SkillLevel := 100
 AttributeLevel := 100
+
+
+; Don't mess with this stuff
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#SingleInstance force
+consoleKey:= "``" ; The console is brought up with `, but you have to put `` for autohotkey.
 
 
 #Y:: ; Runs everything below this whey you hit Windows key + Y
