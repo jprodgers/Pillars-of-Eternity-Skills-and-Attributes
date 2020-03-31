@@ -78,7 +78,7 @@ Send % "{" consoleKey " up}" ; Releases the console key.
 Sleep 500 ; Wait for the console to open and be ready to accept input.
 Send {Enter} ; Sends the enter key.
 Sleep 50 ; Slight wait before sending the command.
-SSend % "Skill " MainChar " Mechanics " SkillLevel ; Sets the Mechanics skill to SkillLevel.
+Send % "Skill " MainChar " Mechanics " SkillLevel ; Sets the Mechanics skill to SkillLevel.
 Send {Enter} ; Sends the enter key.
 Sleep 50 ; Delays a bit before continuing on.
 
